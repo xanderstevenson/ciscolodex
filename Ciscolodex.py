@@ -53,6 +53,13 @@ class PageOne(tk.Frame):
         tk.Frame.__init__(self, master)    
         tk.Frame.configure(self, bg='blue')
         tk.Label(self, width=50, text="Access", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+        
+        tk.Button(self, text="Refresh this page",
+                  command=lambda: master.switch_frame(PageOne)).pack(pady=5, side = TOP)
+        tk.Button(self, text="Go back to start page",
+                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)        
+        
+        
         var1 = StringVar()
         var1_text="I have a Cisco account with my old company that has all my Cisco certifications and \n I no longer have access to that email. How can I get the DevAsc course and exam connected to my new email?"
         var1.set(var1_text)
@@ -62,14 +69,14 @@ class PageOne(tk.Frame):
         var1b_text="""Great question. We'll just need to merge your accounts. We'll need three things from you: \
         \n 1. The old email associated with your account \n 2. The new email your using for Cisco now \n 3. The  Profile ID \
         \n Here's how you can get your Profile ID: \
-        \n Open an Incognito window in Chrome or new Private window in Firefox or Safari. Go enter your sign-on information. \
-        \n Click your prof  to the DevNet site at https://developer.cisco.com \
-        \n Click Login andile icon in the upper right-hand corner and choose Profile & Achievements. \
-        \n Copy the profile ID, such as d47d4b96-6812-11e7-a515-02420ae9710c, which should be in the URL and on the page. \
-        \n Paste your profile ID into the ticket or other communication to DevNet."""
+        \n - Open an Incognito window in Chrome or new Private window in Firefox or Safari. Go enter your sign-on information. \
+        \n - Click your prof  to the DevNet site at https://developer.cisco.com \
+        \n - Click Login andile icon in the upper right-hand corner and choose Profile & Achievements. \
+        \n - Copy the profile ID, such as d47d4b96-6812-11e7-a515-02420ae9710c, which should be in the URL and on the page. \
+        \n - Paste your profile ID into the ticket or other communication to DevNet."""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
-        label = Button(self, width=95, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+        label = Button(self, width=85, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
 
 
         var2 = StringVar()
@@ -79,7 +86,20 @@ class PageOne(tk.Frame):
 
         var2b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var2b.pack()
-        var2b_text = """We are able to extend the course for those effected by COVID-19 but for an indeterminate \n amount of time AND once we do that, you'll lose all progress in the course."""
+        var2b_text = """We understand and are able to extend the course for those effected by COVID-19 but for an indeterminate \n amount of time AND once we do that, you'll lose all progress in the course. \n
+        Please open a ticket here ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214  \n
+        Inside the ticket, please provide:
+        1. email used to register
+        2. You CCO ID
+        3. A screen shot of your receipt
+        4. The Profile ID \
+        \n Here's how you can get your Profile ID: \
+        \n - Open an Incognito window in Chrome or new Private window in Firefox or Safari. Go enter your sign-on information. \
+        \n - Click your prof  to the DevNet site at https://developer.cisco.com \
+        \n - Click Login andile icon in the upper right-hand corner and choose Profile & Achievements. \
+        \n - Copy the profile ID, such as d47d4b96-6812-11e7-a515-02420ae9710c, which should be in the URL and on the page. \
+        \n - Paste your profile ID into the ticket or other communication to DevNet."""
+        
         var2b.insert(tk.END, var2b_text)
         label = Button(self, width=95, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
 
@@ -93,21 +113,14 @@ class PageOne(tk.Frame):
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
         var3b_text = """The DevNet Associate Fundamentals Course is not available for Cisco Employees to purchase at this time. \
-        \n If you'd like to express interest in this course, you may fill out this form: \
-        \n (https://app.smartsheet.com/b/form/e7fdfeb3f6074674a577ae52fffe0a34A) \
-        \n If you would like to start your learning journey for the DevNet Associate Certification immediately, \
+        \n * If you'd like to express interest in this course, please fill out this form: (https://app.smartsheet.com/b/form/e7fdfeb3f6074674a577ae52fffe0a34A) \
+        \n * If you would like to start your learning journey for the DevNet Associate Certification immediately, \
         \n we’d like to direct you to another DevNet Associate course that has been developed in partnership with Learning@Cisco. \
-        \n The title of the course is 'Developing Applications and Automating Workflows using Cisco Core Platforms (DEVASC) v1.0' \
+        \n\n The title of the course is 'Developing Applications and Automating Workflows using Cisco Core Platforms (DEVASC) v1.0' \
         \n and it is available today at no cost on the Cisco Digital Learning Library (CDLL). Please visit https://cxtraining.cisco.com/c/cdll_infbundle/ .\
         \n Please stay tuned for more information on the DevNet Associate Fundamentals training course employee program."""
         var3b.insert(tk.END, var3b_text)
 
-
-
-        tk.Button(self, text="Refresh this page",
-                  command=lambda: master.switch_frame(PageOne)).pack(pady=5, side = BOTTOM)
-        tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = BOTTOM)
 
 
 
@@ -124,7 +137,11 @@ class PageTwo(tk.Frame):
         tk.Frame.__init__(self, master)
         tk.Frame.configure(self, bg='red')
         tk.Label(self, width=50, text="Content", fg="black", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
-      
+
+        tk.Button(self, text="Refresh this page",
+                  command=lambda: master.switch_frame(PageTwo)).pack(pady=5, side = TOP)
+        tk.Button(self, text="Go back to start page",
+                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)      
       
         var1 = StringVar()
         var1_text="I found an error in the course. How can I report it?"
@@ -135,7 +152,7 @@ class PageTwo(tk.Frame):
         var1b_text="""Please open a ticket here --> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
-        label = Button(self, width=95, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+        label = Button(self, width=55, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
 
 
         var2 = StringVar()
@@ -147,14 +164,14 @@ class PageTwo(tk.Frame):
         # var2b.pack()
         var2b_text = """For any questions on content, please go to the DevNet Associate community forum here ----> https://learningnetwork.cisco.com/s/topic/0TO3i0000008jY5GAI/devnet-certifications-community"""
         var2b.insert(tk.END, var2b_text)
-        label = Button(self, width=95, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
+        label = Button(self, width=85, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
 
 
 
         var3 = StringVar()
         var3_text="How long can you complete the course, without any programming experience?"
         var3.set(var3_text)
-        label = Button(self, width=85, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
+        label = Button(self, width=70, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
 
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
@@ -165,19 +182,12 @@ class PageTwo(tk.Frame):
         var4 = StringVar()
         var4_text="Unable to access repo-https://github.com/CiscoDevNet/devasc-code-examples.git -1"
         var4.set(var4_text)
-        label = Button(self, width=85, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
+        label = Button(self, width=75, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
         var4b_text = """???"""
         var4b.insert(tk.END, var4b_text)
-
-
-
-        tk.Button(self, text="Refresh this page",
-                  command=lambda: master.switch_frame(PageTwo)).pack(pady=5, side = BOTTOM)
-        tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = BOTTOM)
 
 
 
@@ -195,17 +205,22 @@ class PageThree(tk.Frame):
         tk.Frame.configure(self, bg='green')
         tk.Label(self, width=50, text="Payment", fg="black", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
       
-      
+
+        tk.Button(self, text="Refresh this page",
+                  command=lambda: master.switch_frame(PageThree)).pack(pady=5, side = TOP)
+        tk.Button(self, text="Go back to start page",
+                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)
+              
         var1 = StringVar()
         var1_text="Can I get a refund?"
         var1.set(var1_text)
         
-        var1b = tk.Text(self, height=10, width=120, fg="green", font=('Helvetica', 10))
+        var1b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var1b.pack()
         var1b_text="""Sorry, but refunds are not available."""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
-        label = Button(self, width=95, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+        label = Button(self, width=45, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
 
 
         var2 = StringVar()
@@ -236,14 +251,14 @@ Note:
 Coupon is not supported with paying by Cisco Learning Credit.
 If you already got a pending request then will not be able to submit a second request. (Place order failed)"""
         var2b.insert(tk.END, var2b_text)
-        label = Button(self, width=95, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
+        label = Button(self, width=55, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
 
 
 
         var3 = StringVar()
         var3_text="My company wants to pay for the 6-MONTH PLAN course, but they need to have billing \n or purchasing orders. Is it possible for Cisco to provide this?"
         var3.set(var3_text)
-        label = Button(self, width=85, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
+        label = Button(self, width=80, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
 
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
@@ -266,12 +281,6 @@ You can read the course FAQs"""
         var4b.insert(tk.END, var4b_text)
 
 
-
-        tk.Button(self, text="Refresh this page",
-                  command=lambda: master.switch_frame(PageThree)).pack(pady=5, side = BOTTOM)
-        tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = BOTTOM)
-
 class PageFour(tk.Frame):
     def __init__(self, master):
 
@@ -285,6 +294,12 @@ class PageFour(tk.Frame):
         tk.Frame.__init__(self, master)
         tk.Frame.configure(self, bg='black')
         tk.Label(self, width=50, text="Platform", fg="black", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+    
+        tk.Button(self, text="Refresh this page",
+                  command=lambda: master.switch_frame(PageFour)).pack(pady=5, side = TOP)
+        tk.Button(self, text="Go back to start page",
+                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)
+    
       
       
         var1 = StringVar()
@@ -296,7 +311,7 @@ class PageFour(tk.Frame):
         var1b_text="""Please clear your cache and try again. It that doesn't work, please \n open a ticket: Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
-        label = Button(self, width=95, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+        label = Button(self, width=55, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
 
 
         var2 = StringVar()
@@ -308,14 +323,14 @@ class PageFour(tk.Frame):
         # var2b.pack()
         var2b_text = """If you are using Edge Browser then it should be of version >= 79. or else try on Firefox or Chrome"""
         var2b.insert(tk.END, var2b_text)
-        label = Button(self, width=95, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
+        label = Button(self, width=55, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
 
 
 
         var3 = StringVar()
         var3_text="How can I reset a learning progress for some module?"
         var3.set(var3_text)
-        label = Button(self, width=85, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
+        label = Button(self, width=75, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
 
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
@@ -324,9 +339,9 @@ class PageFour(tk.Frame):
 
 
         var4 = StringVar()
-        var4_text="For any technical issues with your course, including page appearance, video or lab functionality, or payments, please open a ticket."
+        var4_text="For any technical issues with your course, including page appearance, video or lab functionality, \n or payments, please open a ticket."
         var4.set(var4_text)
-        label = Button(self, width=85, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
+        label = Button(self, width=75, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
@@ -334,19 +349,77 @@ class PageFour(tk.Frame):
         var4b.insert(tk.END, var4b_text)
 
 
-
-        tk.Button(self, text="Refresh this page",
-                  command=lambda: master.switch_frame(PageFour)).pack(pady=5, side = BOTTOM)
-        tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = BOTTOM)
-
 class PageFive(tk.Frame):
     def __init__(self, master):
+
+        def show_text(self, item):
+            item.pack(side="top", pady=10)
+            self.Text.set("")
+            self.Text.pack_forget(width=0)
+        # def hide_text(self, item):
+        #     item.pack_forget()       
+
         tk.Frame.__init__(self, master)
-        tk.Frame.configure(self,bg='purple')
-        tk.Label(self, text="Certifications", fg="purple", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+        tk.Frame.configure(self, bg='purple')
+        tk.Label(self, width=50, text="Certifications", fg="black", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+      
+        tk.Button(self, text="Refresh this page",
+                  command=lambda: master.switch_frame(PageFive)).pack(pady=5, side = TOP)
         tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack()
+                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)
+      
+        var1 = StringVar()
+        var1_text="How do I claim my continuing education credits? Are there any extra requirements?"
+        var1.set(var1_text)
+        
+        var1b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var1b.pack()
+        var1b_text="""After you have completed the entire course, you will see an option to "Claim you Course Certificate" on the course website. Download the PDF version of the certificate and then pleaseease follow the process here: https://developer.cisco.com/docs/fundamentals/help/#!continuing-education-credit/continuing-education-credit
+
+        Here are a few extra resources to help:
+
+        https://www.cisco.com/c/dam/en_us/training-events/training-certification-faqs.pdf
+
+        https://www.cisco.com/c/en/us/training-events/training-certifications/recertification-policy.html"""
+        var1b.insert(tk.END, var1b_text) 
+        # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
+        label = Button(self, width=75, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+
+
+        var2 = StringVar()
+        var2_text="Are there any additional resources to prepare for the DevNet Associate Exam?"
+        var2.set(var2_text)
+         
+
+        var2b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var2b.pack()
+        var2b_text = """On the DevNet site, there is the DevNet Associate Fundamentals Course (the best way), and the subscription applies only to that course. There are additional DevNet courses in the Cisco Platinum Learning Library: https://www.cisco.com/c/en/us/training-events/training-certifications/training/learning-library/platinum-learning-library.html You can also check out https://developer.cisco.com/certification/exam-topic-associate/ for the Topics and relevant Learning Labs."""
+        var2b.insert(tk.END, var2b_text)
+        label = Button(self, width=75, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
+
+
+
+        var3 = StringVar()
+        var3_text="How many CEs will I get for completing the course?"
+        var3.set(var3_text)
+        label = Button(self, width=75, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
+
+        var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var3b.pack()
+        var3b_text = """The Continuing Education Program is governed by the Cisco Continuing Education Advisory Board. The Cisco Continuing Education Advisory Board has approved DevNet Associate Fundamentals course for earning 48 Continuing Education credits."""
+        var3b.insert(tk.END, var3b_text)
+
+
+        var4 = StringVar()
+        var4_text="Will passing the DevNet Associate exam renew my CCNP / CCNA / etc.?"
+        var4.set(var4_text)
+        label = Button(self, width=75, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
+
+        var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var3b.pack()
+        var4b_text = """It unfortunately won’t due to 200-901 being at the associate level and not the professional level. (It will renew all associate level exams you hold) Take a look at the recertification requirements here: https://www.cisco.com/c/en/us/training-events/training-certifications/recertification-policy.html#~requirements"""
+        var4b.insert(tk.END, var4b_text)
+
 
 
 
