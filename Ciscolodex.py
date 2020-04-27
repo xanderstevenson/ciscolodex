@@ -42,10 +42,9 @@ class PageOne(tk.Frame):
     def __init__(self, master):
 
         def show_text(self, item):
-            image_name = PhotoImage(file="C:\\Users\\alexstev\\devnet\\ciscolodex\\ciscolodex\\blue-tile.gif")
             item.pack(side="top", pady=10)
-            self.Text.set("")
-            self.Text.pack_forget(width=0)
+            # self.Text.set("")
+            # self.Text.pack_forget(width=0)
 
         # def hide_text(self, item):
         #     item.pack_forget()       
@@ -121,6 +120,17 @@ class PageOne(tk.Frame):
         \n Please stay tuned for more information on the DevNet Associate Fundamentals training course employee program."""
         var3b.insert(tk.END, var3b_text)
 
+
+
+        var4 = StringVar()
+        var4_text="I have a question about subscription period. I want to pay for the course today, \n but start to learn it in next month, for example. So, from what date will be calculated subscription period?"
+        var4.set(var4_text)
+        label = Button(self, width=85, textvariable=var4, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var4b)).pack(side="top", pady=10)        
+
+        var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var3b.pack()
+        var4b_text = """The subscription period starts on the date of your purchase , you will NOT be able to access the course if your purchased plan has expired. In order to obtain access again, a new enrollment or a renewal plan will be required. """
+        var4b.insert(tk.END, var4b_text)
 
 
 
