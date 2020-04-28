@@ -24,15 +24,13 @@ class PageOne(tk.Frame):
     def __init__(self, master):
 
         def show_text(self, item):
-            
+            # my_var = str(item)[0:len(str(item))]
+            # var1_text.configure(fg="red")
             item.pack(side="top", pady=10)
             # self.Text.set("")
             list = [var1b, var2b, var3b, var4b]
             index = list.index(item)
-
             del list[index]
-
-
             for it in list:
                 it.pack_forget()
 

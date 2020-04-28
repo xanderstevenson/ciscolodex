@@ -55,7 +55,7 @@ class PageFour(tk.Frame):
         var1b_text="""Please clear your cache and try again. It that doesn't work, please \n open a ticket: Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
-        label = Button(self, width=55, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
+        label = Button(self, width=40, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
 
 
         var2 = StringVar()
@@ -67,14 +67,14 @@ class PageFour(tk.Frame):
         # var2b.pack()
         var2b_text = """If you are using Edge Browser then it should be of version >= 79. or else try on Firefox or Chrome"""
         var2b.insert(tk.END, var2b_text)
-        label = Button(self, width=55, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
+        label = Button(self, width=45, textvariable=var2, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var2b)).pack(side="top", pady=10) 
 
 
 
         var3 = StringVar()
         var3_text="How can I reset a learning progress for some module?"
         var3.set(var3_text)
-        label = Button(self, width=75, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
+        label = Button(self, width=65, textvariable=var3, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var3b)).pack(side="top", pady=10)        
 
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
