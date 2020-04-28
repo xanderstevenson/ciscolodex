@@ -7,6 +7,8 @@ except:
     from tkinter import *
 from PIL import ImageTk,Image
 import Page_One, Page_Two, Page_Three, Page_Four, Page_Five
+import sys
+import os
 
 class SampleApp(tk.Tk):
     def __init__(self):

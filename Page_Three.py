@@ -23,13 +23,18 @@ class PageThree(tk.Frame):
 
         def show_text(self, item):
             item.pack(side="top", pady=10)
-            self.Text.set("")
-            self.Text.pack_forget(width=0)
-        # def hide_text(self, item):
-        #     item.pack_forget()       
+            # self.Text.set("")
+            list = [var1b, var2b, var3b, var4b]
+            index = list.index(item)
+
+            del list[index]
+
+
+            for it in list:
+                it.pack_forget()      
 
         tk.Frame.__init__(self, master)
-        tk.Frame.configure(self, bg='green')
+        tk.Frame.configure(self, bg='#a1ad9a')
         tk.Label(self, width=50, text="Payment", fg="black", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
       
 

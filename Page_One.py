@@ -24,15 +24,21 @@ class PageOne(tk.Frame):
     def __init__(self, master):
 
         def show_text(self, item):
+            
             item.pack(side="top", pady=10)
-            self.Text.set("")
-            self.Text.pack_forget(width=0)
+            # self.Text.set("")
+            list = [var1b, var2b, var3b, var4b]
+            index = list.index(item)
 
-        # def hide_text(self, item):
-        #     item.pack_forget()       
+            del list[index]
+
+
+            for it in list:
+                it.pack_forget()
+
        
         tk.Frame.__init__(self, master)    
-        tk.Frame.configure(self, bg='blue')
+        tk.Frame.configure(self, bg='#a5cee8')
         tk.Label(self, width=50, text="Access", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
         
         tk.Button(self, text="Refresh this page",
