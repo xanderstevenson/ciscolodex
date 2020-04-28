@@ -7,6 +7,18 @@ except:
     from tkinter import *
 from PIL import ImageTk,Image
 
+import sys
+import os
+
+
+def restart_program():
+    """Restarts the current program.
+    Note: this function does not return. Any cleanup action (like
+    saving data) must be done before calling this function."""
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+
+
 class PageFive(tk.Frame):
     def __init__(self, master):
 
@@ -24,7 +36,7 @@ class PageFive(tk.Frame):
         tk.Button(self, text="Refresh this page",
                   command=lambda: master.switch_frame(PageFive)).pack(pady=5, side = TOP)
         tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)
+                  command=lambda: master.switch_frame(restart_program())).pack(pady=5,side = TOP)
       
         var1 = StringVar()
         var1_text="How do I claim my continuing education credits? Are there any extra requirements?"

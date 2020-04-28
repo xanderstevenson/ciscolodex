@@ -6,8 +6,18 @@ try:
 except:
     import tkinter as tk
     from tkinter import *
-from PIL import ImageTk,Image
-# from Ciscolodex import StartPage
+from PIL import ImageTk, Image
+
+import sys
+import os
+
+def restart_program():
+    """Restarts the current program.
+    Note: this function does not return. Any cleanup action (like
+    saving data) must be done before calling this function."""
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
+
 
 
 class PageOne(tk.Frame):
@@ -15,8 +25,8 @@ class PageOne(tk.Frame):
 
         def show_text(self, item):
             item.pack(side="top", pady=10)
-            # self.Text.set("")
-            # self.Text.pack_forget(width=0)
+            self.Text.set("")
+            self.Text.pack_forget(width=0)
 
         # def hide_text(self, item):
         #     item.pack_forget()       
@@ -28,7 +38,7 @@ class PageOne(tk.Frame):
         tk.Button(self, text="Refresh this page",
                   command=lambda: master.switch_frame(PageOne)).pack(pady=5, side = TOP)
         tk.Button(self, text="Go back to start page",
-                  command=lambda: master.switch_frame(StartPage)).pack(pady=5,side = TOP)        
+                  command=lambda: master.switch_frame(restart_program())).pack(pady=5,side = TOP)        
         
         
         var1 = StringVar()
