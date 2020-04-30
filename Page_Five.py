@@ -25,12 +25,10 @@ class PageFive(tk.Frame):
         def show_text(self, item):
             item.pack(side="top", pady=10)
             # self.Text.set("")
+            self.fg = 'red'
             list = [var1b, var2b, var3b, var4b]
             index = list.index(item)
-
             del list[index]
-
-
             for it in list:
                 it.pack_forget() 
 
