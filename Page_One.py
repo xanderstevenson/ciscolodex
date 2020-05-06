@@ -28,7 +28,7 @@ class PageOne(tk.Frame):
             # var1_text.configure(fg="red")
             item.pack(side="top", pady=10)
             # self.Text.set("")
-            list = [var1b, var2b, var3b, var4b]
+            list = [var1b, var2b, var3b, var4b, var5b]
             index = list.index(item)
             del list[index]
             for it in list:
@@ -115,5 +115,22 @@ class PageOne(tk.Frame):
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
-        var4b_text = """The subscription period starts on the date of your purchase , you will NOT be able to access the course if your purchased plan has expired. In order to obtain access again, a new enrollment or a renewal plan will be required. """
+        var4b_text = """The subscription period starts on the date of your purchase; you will NOT be able to access the course if your purchased plan has expired. In order to obtain access again, a new enrollment or a renewal plan will be required. """
         var4b.insert(tk.END, var4b_text)
+
+
+        var5 = StringVar()
+        var5_text="I have a coupon code for an extension to the course. How do I use it?"
+        var5.set(var5_text)
+        label = Button(self, width=85, textvariable=var5, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var5b)).pack(side="top", pady=10)        
+
+        var5b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
+        # var3b.pack()
+        var5b_text = """Please visit https://developer.cisco.com/certification/fundamentals/ when your current subscription expires.
+
+            1. Choose 'Renewal Plan'
+
+            2. Choose 'Pay with Credit Card'
+
+            3. Enter the Coupon Code"""
+        var5b.insert(tk.END, var5b_text)

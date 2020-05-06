@@ -87,6 +87,6 @@ class PageTwo(tk.Frame):
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
-        var4b_text = """???"""
+        var4b_text = """Please clear your cache and try again. If that doesn't work, you'll most likely need to open a ticket. To learn how to do that, and much more, please visit https://developer.cisco.com/docs/devnet-support/#!support-faq/support-faq"""
         var4b.insert(tk.END, var4b_text)
 
