@@ -50,7 +50,8 @@ class PageTwo(tk.Frame):
         
         var1b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var1b.pack()
-        var1b_text="""Please open a ticket here --> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
+        var1b_text="""Please open a ticket here --> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214 \
+         \n   \n NOTE - Only supply this link in a 1:1 Room to keep it private"""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
         label = Button(self, width=55, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
@@ -87,6 +88,7 @@ class PageTwo(tk.Frame):
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
-        var4b_text = """Please clear your cache and try again. If that doesn't work, you'll most likely need to open a ticket. To learn how to do that, and much more, please visit https://developer.cisco.com/docs/devnet-support/#!support-faq/support-faq"""
+        var4b_text = """Please clear your cache and try again. If that doesn't work, you'll most likely need to open a ticket. To learn how to do that, and much more, please visit https://developer.cisco.com/docs/devnet-support/#!support-faq/support-faq \
+          \n \n NOTE - Only supply this link in a 1:1 Room to keep it private"""
         var4b.insert(tk.END, var4b_text)
 

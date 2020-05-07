@@ -71,7 +71,8 @@ class PageOne(tk.Frame):
 
         var2b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var2b.pack()
-        var2b_text = """We understand and are able to extend the course for those effected by COVID-19 but for an indeterminate \n amount of time AND once we do that, you'll lose all progress in the course. \n
+        var2b_text = """  NOTE - Only supply this link in a 1:1 Room to keep it private \n
+        \n We understand and are able to extend the course for those effected by COVID-19 but for an indeterminate \n amount of time AND once we do that, you'll lose all progress in the course. \n
         Please open a ticket here ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214  \n
         Inside the ticket, please provide:
         1. email used to register

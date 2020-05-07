@@ -52,7 +52,8 @@ class PageFour(tk.Frame):
         
         var1b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var1b.pack()
-        var1b_text="""Please clear your cache and try again. It that doesn't work, please \n open a ticket: Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
+        var1b_text="""Please clear your cache and try again. It that doesn't work, please \n open a ticket: Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214 \
+          \n \n    NOTE - Only supply this link in a 1:1 Room to keep it private"""
         var1b.insert(tk.END, var1b_text) 
         # fg="black", font=('Helvetica', 12)).pack(side="top", pady=10, fill="both")
         label = Button(self, width=40, textvariable=var1, fg="black", font=('Helvetica', 12), command=lambda: show_text(self, var1b)).pack(side="top", pady=10)        
@@ -89,6 +90,7 @@ class PageFour(tk.Frame):
 
         var4b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
-        var4b_text = """Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214"""
+        var4b_text = """Contact support ---> https://devnetsupport.cisco.com/hc/en-us/requests/new?ticket_form_id=360002862214 \
+           \n \n   NOTE - Only supply this link in a 1:1 Room to keep it private"""
         var4b.insert(tk.END, var4b_text)
 
