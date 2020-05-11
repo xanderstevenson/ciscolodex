@@ -94,9 +94,7 @@ If you already got a pending request then will not be able to submit a second re
 
         var3b = tk.Text(self, height=10, width=120, fg="black", font=('Helvetica', 10))
         # var3b.pack()
-        var3b_text = """Thanks for the inquiry. We provide a receipt, which will be provided at the time of purchase. No invoice is available. This has been discussed by the powers that be and it seems they're not making any exceptions. That being said, there is another DevAsc course available.
-
-You'll have to either log-in or sign up to view ---> https://digital-learning.cisco.com/#/course/61907"""
+        var3b_text = """Thanks for the inquiry. Yes, invoices can be generated upon request. """
         var3b.insert(tk.END, var3b_text)
 
 
